@@ -43,7 +43,44 @@ class _HomeShellState extends State<HomeShell> {
 class _HomeTab extends StatelessWidget {
   const _HomeTab();
   @override
-  Widget build(BuildContext context) => const Center(child: Text('Inicio'));
+  Widget build(BuildContext context) {
+    final items = const [
+      'Tomate',
+      'Zanahoria',
+      'Lechuga',
+      'Manzana',
+      'Plátano',
+      'Pepino',
+      'Cebolla',
+      'Pimiento',
+      'Brócoli',
+      'Aguacate',
+    ];
+
+    return PageView.builder(
+      scrollDirection: Axis.vertical,
+      itemCount: items.length,
+      physics: const PageScrollPhysics(),
+      itemBuilder: (context, index) {
+        final name = items[index];
+        return Container(
+          width: double.infinity,
+          height: double.infinity,
+          color: AppColors.primarySoft,
+          child: Center(
+            child: Text(
+              name,
+              style: const TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.w700,
+                color: Colors.black87,
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
 }
 
 class _DiaryTab extends StatelessWidget {
