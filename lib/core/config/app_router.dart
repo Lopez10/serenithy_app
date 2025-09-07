@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../presentation/pages/register_page.dart';
+import '../../presentation/pages/home_shell.dart';
 import '../../shared/constants/app_constants.dart';
 
 /// Configuración de rutas de la aplicación
@@ -14,7 +15,7 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.home,
         name: 'home',
-        builder: (context, state) => const HomePage(),
+        builder: (context, state) => const HomeShell(),
       ),
 
       // Ruta de registro

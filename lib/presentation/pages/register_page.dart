@@ -9,6 +9,7 @@ import '../../shared/widgets/password_field.dart';
 import '../../shared/widgets/submit_button.dart';
 import '../blocs/auth_bloc.dart';
 import '../blocs/base_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 /// Pantalla de registro de usuario
 class RegisterPage extends StatelessWidget {
@@ -67,8 +68,8 @@ class _RegisterViewState extends State<RegisterView> {
                   backgroundColor: AppColors.success,
                 ),
               );
-              // Aquí podrías navegar a otra pantalla
-              // Navigator.of(context).pushReplacementNamed('/home');
+              // Navegar al Home
+              context.go(AppRoutes.home);
             }
           },
           child: Column(
@@ -241,7 +242,7 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Navigator.of(context).pushReplacementNamed('/login');
+                      context.go(AppRoutes.login);
                     },
                     child: Text(
                       'Inicia sesión',
@@ -257,6 +258,13 @@ class _RegisterViewState extends State<RegisterView> {
               ),
 
               SizedBox(height: AppDimensions.marginL.h),
+
+              // Botón para omitir registro y navegar al Home
+              OutlineButton(
+                onPressed: () => context.go(AppRoutes.home),
+                text: 'Omitir por ahora',
+                margin: EdgeInsets.only(top: AppDimensions.marginS.h),
+              ),
             ],
           ),
         ),
