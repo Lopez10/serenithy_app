@@ -124,8 +124,8 @@ abstract class BaseBloc<Event extends BaseEvent, State extends BaseState>
   }
 
   @override
-  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    super.onError(bloc, error, stackTrace);
+  void onError(Object error, StackTrace stackTrace) {
+    super.onError(error, stackTrace);
     _logger?.e('BLoC Error', error: error, stackTrace: stackTrace);
   }
 }

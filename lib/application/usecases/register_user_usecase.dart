@@ -5,6 +5,7 @@ import '../../domain/entities/user.dart';
 import '../../domain/value_objects/email.dart';
 import '../../domain/value_objects/name.dart';
 import '../../domain/value_objects/password.dart';
+import '../../domain/value_objects/value_object.dart';
 import '../../domain/repositories/user_repository.dart';
 import '../../domain/exceptions/domain_exceptions.dart';
 import 'base_usecase.dart';
@@ -25,7 +26,7 @@ class RegisterUserInput {
 /// Caso de uso para registrar un nuevo usuario
 @injectable
 class RegisterUserUseCase extends BaseUseCase<RegisterUserInput, User> {
-  const RegisterUserUseCase(this._userRepository);
+  RegisterUserUseCase(this._userRepository);
 
   final IUserRepository _userRepository;
 
@@ -64,7 +65,7 @@ class RegisterUserUseCase extends BaseUseCase<RegisterUserInput, User> {
     } on ValueObjectValidationException catch (e) {
       return Left(DomainValidationException(e.message));
     } catch (e) {
-      return Left(DomainException('Registration failed: ${e.toString()}'));
+      return Left(BusinessRuleException('Registration failed: ${e.toString()}'));
     }
   }
 

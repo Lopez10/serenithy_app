@@ -8,6 +8,7 @@ import '../../shared/widgets/custom_text_field.dart';
 import '../../shared/widgets/password_field.dart';
 import '../../shared/widgets/submit_button.dart';
 import '../blocs/auth_bloc.dart';
+import '../blocs/base_bloc.dart';
 
 /// Pantalla de registro de usuario
 class RegisterPage extends StatelessWidget {

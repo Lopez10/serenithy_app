@@ -2,32 +2,36 @@ import 'package:flutter/material.dart';
 
 /// Constantes de colores de la aplicación
 class AppColors {
-  static const Color primary = Color(0xFF6366F1);
-  static const Color primaryVariant = Color(0xFF4F46E5);
-  static const Color secondary = Color(0xFF06B6D4);
-  static const Color secondaryVariant = Color(0xFF0891B2);
+  // Paleta provista por el usuario
+  static const Color primary = Color(0xFFBEA1F7); // Lila principal #bea1f7
+  static const Color primaryVariant = Color(0xFFD4D0EF); // Lila secundario como variante
+  static const Color secondary = Color(0xFFD4D0EF); // Lila secundario #d4d0ef
+  static const Color secondaryVariant = Color(0xFFBEA1F7);
+  // Tonos suaves para superficies relacionadas al primario
+  static const Color primarySoft = Color(0xFFF1EDFF); // suave derivado del lila
+  static const Color primarySurface = Color(0xFFE7E1FF);
   
   // Neutral colors
-  static const Color background = Color(0xFFFAFAFA);
+  static const Color background = Color(0xFFFFFFFF);
   static const Color surface = Color(0xFFFFFFFF);
   static const Color card = Color(0xFFFFFFFF);
   
   // Text colors
   static const Color onPrimary = Color(0xFFFFFFFF);
   static const Color onSecondary = Color(0xFFFFFFFF);
-  static const Color onBackground = Color(0xFF111827);
-  static const Color onSurface = Color(0xFF111827);
+  static const Color onBackground = Color(0xFF1F2937);
+  static const Color onSurface = Color(0xFF1F2937);
   
   // Status colors
   static const Color success = Color(0xFF10B981);
-  static const Color warning = Color(0xFFF59E0B);
+  static const Color warning = Color(0xFFFFECA1); // Amarillo #ffeca1
   static const Color error = Color(0xFFEF4444);
   static const Color info = Color(0xFF3B82F6);
   
   // Gray scale
   static const Color gray50 = Color(0xFFF9FAFB);
   static const Color gray100 = Color(0xFFF3F4F6);
-  static const Color gray200 = Color(0xFFE5E7EB);
+  static const Color gray200 = Color(0xFFE1E1E1); // Gris clarito #e1e1e1
   static const Color gray300 = Color(0xFFD1D5DB);
   static const Color gray400 = Color(0xFF9CA3AF);
   static const Color gray500 = Color(0xFF6B7280);

@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../domain/entities/user.dart';
 import '../../domain/value_objects/email.dart';
+import '../../domain/value_objects/value_object.dart';
 import '../../domain/repositories/user_repository.dart';
 import '../../domain/exceptions/domain_exceptions.dart';
 import 'base_usecase.dart';
@@ -21,7 +22,7 @@ class LoginUserInput {
 /// Caso de uso para hacer login de usuario
 @injectable
 class LoginUserUseCase extends BaseUseCase<LoginUserInput, User> {
-  const LoginUserUseCase(this._userRepository);
+  LoginUserUseCase(this._userRepository);
 
   final IUserRepository _userRepository;
 
@@ -64,7 +65,7 @@ class LoginUserUseCase extends BaseUseCase<LoginUserInput, User> {
     } on ValueObjectValidationException catch (e) {
       return Left(DomainValidationException(e.message));
     } catch (e) {
-      return Left(DomainException('Login failed: ${e.toString()}'));
+      return Left(BusinessRuleException('Login failed: ${e.toString()}'));
     }
   }
 }

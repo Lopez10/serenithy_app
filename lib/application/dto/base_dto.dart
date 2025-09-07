@@ -1,6 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'base_dto.freezed.dart';
+part 'base_dto.g.dart';
+
 /// DTO base abstracto para transferencia de datos
 /// Los DTOs son inmutables y serializables
 abstract class BaseDto {
@@ -14,7 +17,7 @@ abstract class BaseDto {
 }
 
 /// Respuesta API genérica
-@freezed
+@Freezed(genericArgumentFactories: true)
 class ApiResponse<T> with _$ApiResponse<T> {
   const factory ApiResponse({
     required bool success,
@@ -60,7 +63,7 @@ class PaginationDto with _$PaginationDto {
 }
 
 /// Respuesta paginada
-@freezed
+@Freezed(genericArgumentFactories: true)
 class PaginatedResponseDto<T> with _$PaginatedResponseDto<T> {
   const factory PaginatedResponseDto({
     required List<T> data,

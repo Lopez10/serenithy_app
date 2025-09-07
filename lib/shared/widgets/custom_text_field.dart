@@ -107,60 +107,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
               filled: true,
               fillColor: widget.backgroundColor ?? 
                   (_isFocused ? Colors.white : AppColors.gray50),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  widget.borderRadius ?? AppDimensions.radiusL,
-                ),
-                borderSide: BorderSide(
-                  color: AppColors.gray200,
-                  width: 1.5.w,
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  widget.borderRadius ?? AppDimensions.radiusL,
-                ),
-                borderSide: BorderSide(
-                  color: AppColors.gray200,
-                  width: 1.5.w,
-                ),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  widget.borderRadius ?? AppDimensions.radiusL,
-                ),
-                borderSide: BorderSide(
-                  color: AppColors.primary,
-                  width: 2.w,
-                ),
-              ),
-              errorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  widget.borderRadius ?? AppDimensions.radiusL,
-                ),
-                borderSide: BorderSide(
-                  color: AppColors.error,
-                  width: 2.w,
-                ),
-              ),
-              focusedErrorBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  widget.borderRadius ?? AppDimensions.radiusL,
-                ),
-                borderSide: BorderSide(
-                  color: AppColors.error,
-                  width: 2.w,
-                ),
-              ),
-              disabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  widget.borderRadius ?? AppDimensions.radiusL,
-                ),
-                borderSide: BorderSide(
-                  color: AppColors.gray200,
-                  width: 1.w,
-                ),
-              ),
+              border: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              focusedErrorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: AppDimensions.paddingM.w,
                 vertical: AppDimensions.paddingM.h,
