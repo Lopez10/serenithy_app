@@ -96,6 +96,7 @@ class AppRoutes {
 class ApiConstants {
   static const String authEndpoint = '/auth';
   static const String usersEndpoint = '/users';
+  static const String foodsEndpoint = '/foods';
   static const String profileEndpoint = '/profile';
   
   // Headers
