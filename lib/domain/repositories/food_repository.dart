@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../entities/food.dart';
+import '../../modules/food/domain/entities/food.dart';
 import '../exceptions/domain_exceptions.dart';
 import 'base_repository.dart';
 

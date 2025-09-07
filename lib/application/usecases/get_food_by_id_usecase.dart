@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../domain/entities/food.dart';
+import '../../modules/food/domain/entities/food.dart';
 import '../../domain/repositories/food_repository.dart';
 import '../../domain/exceptions/domain_exceptions.dart';
 import '../usecases/base_usecase.dart';

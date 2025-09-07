@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../modules/food/domain/entities/food.dart';
-import '../../modules/food/domain/value_objects/barcode.dart';
-import '../../domain/repositories/food_repository.dart';
-import '../../domain/exceptions/domain_exceptions.dart';
-import '../usecases/base_usecase.dart';
+import 'package:serenithy_app/modules/food/domain/entities/food.dart';
+import 'package:serenithy_app/modules/food/domain/value_objects/barcode.dart';
+import 'package:serenithy_app/domain/repositories/food_repository.dart';
+import 'package:serenithy_app/domain/exceptions/domain_exceptions.dart';
+import 'package:serenithy_app/application/usecases/base_usecase.dart';
 
 class CreateFoodInput {
   const CreateFoodInput({
@@ -25,8 +25,8 @@ class CreateFoodInput {
   final String category;
   final bool isProcessed;
   final String? barcode;
-  final String? description;
   final NutritionalInfo? nutritionalInfo;
+  final String? description;
   final String? scientificName;
   final bool isGeneric;
 }

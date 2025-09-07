@@ -1,5 +1,6 @@
-import 'base_entity.dart';
-import '../value_objects/barcode.dart';
+import '../../../food/domain/value_objects/barcode.dart';
+import '../../../food/domain/value_objects/nutritional_info.dart';
+import '../../../../domain/entities/base_entity.dart';
 
 /// Entidad Food siguiendo DDD
 class Food extends BaseEntity {
@@ -80,31 +81,6 @@ class Food extends BaseEntity {
         updatedAt,
         deletedAt,
       ];
-}
-
-/// Info nutricional básica
-class NutritionalInfo {
-  NutritionalInfo({
-    this.calories,
-    this.protein,
-    this.carbs,
-    this.fat,
-  }) {
-    _validate();
-  }
-
-  final double? calories;
-  final double? protein;
-  final double? carbs;
-  final double? fat;
-
-  void _validate() {
-    for (final value in [calories, protein, carbs, fat]) {
-      if (value != null && value < 0) {
-        throw const FormatException('Nutritional values must be >= 0');
-      }
-    }
-  }
 }
 
 

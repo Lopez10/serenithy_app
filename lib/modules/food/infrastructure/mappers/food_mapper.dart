@@ -1,6 +1,6 @@
-import '../../domain/entities/food.dart';
-import '../../domain/value_objects/barcode.dart';
-import '../../application/dto/food_dto.dart';
+import 'package:serenithy_app/modules/food/domain/entities/food.dart';
+import 'package:serenithy_app/modules/food/domain/value_objects/barcode.dart';
+import 'package:serenithy_app/modules/food/application/dto/food_dto.dart';
 
 class FoodMapper {
   static Food fromDto(FoodDto dto) {

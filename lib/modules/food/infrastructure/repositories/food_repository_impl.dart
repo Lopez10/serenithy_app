@@ -1,13 +1,13 @@
 import 'package:injectable/injectable.dart';
 import 'package:dartz/dartz.dart';
 
-import '../../domain/entities/food.dart';
-import '../../domain/exceptions/domain_exceptions.dart';
-import '../../domain/repositories/food_repository.dart';
-import '../../application/dto/food_dto.dart';
-import '../adapters/http_client.dart';
-import '../mappers/food_mapper.dart';
-import '../../shared/constants/app_constants.dart';
+import 'package:serenithy_app/domain/repositories/food_repository.dart';
+import 'package:serenithy_app/modules/food/domain/entities/food.dart';
+import 'package:serenithy_app/modules/food/application/dto/food_dto.dart';
+import 'package:serenithy_app/modules/food/infrastructure/mappers/food_mapper.dart';
+import 'package:serenithy_app/infrastructure/adapters/http_client.dart';
+import 'package:serenithy_app/shared/constants/app_constants.dart';
+import 'package:serenithy_app/domain/exceptions/domain_exceptions.dart';
 
 @LazySingleton(as: IFoodRepository)
 class FoodRepositoryImpl implements IFoodRepository {
@@ -19,7 +19,7 @@ class FoodRepositoryImpl implements IFoodRepository {
   Future<Either<DomainException, Food>> create(Food food) async {
     final dto = FoodMapper.toCreateDto(food).toJson();
     final result = await _httpClient.post<FoodDto>(
-      '${ApiConstants.foodsEndpoint}',
+      ApiConstants.foodsEndpoint,
       data: dto,
       fromJson: (json) => FoodDto.fromJson(json),
     );
@@ -41,9 +41,8 @@ class FoodRepositoryImpl implements IFoodRepository {
     int? limit,
     Map<String, dynamic>? filters,
   }) async {
-    // Simplificación: endpoint '/foods' devuelve un objeto { data: [...]} o lista directa
     final result = await _httpClient.get<Map<String, dynamic>>(
-      '${ApiConstants.foodsEndpoint}',
+      ApiConstants.foodsEndpoint,
       queryParameters: {
         if (page != null) 'page': page,
         if (limit != null) 'limit': limit,

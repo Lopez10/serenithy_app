@@ -1,8 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../domain/entities/food.dart';
-import '../../domain/repositories/food_repository.dart';
+import 'package:serenithy_app/modules/food/domain/entities/food.dart';
+import 'package:serenithy_app/domain/repositories/food_repository.dart';
 import '../../domain/exceptions/domain_exceptions.dart';
 
 // Events
